@@ -17,6 +17,14 @@ public class OrderRequest {
         return qty;
     }
 
+    @Override
+    public String toString() {
+        return "OrderRequest{" +
+                "productId=" + productId +
+                ", qty=" + qty +
+                '}';
+    }
+
     public void setQty(Integer qty) {
         this.qty = qty;
     }

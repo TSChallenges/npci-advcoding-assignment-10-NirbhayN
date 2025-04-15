@@ -38,6 +38,7 @@ public class ProductController {
     public ResponseEntity<Product> getProduct(@PathVariable("id") Integer id) {
         Product p = productService.getProduct(id);
         if (p != null) {
+            System.out.println("::::: the product was sent for id:"+id+"  :::::");
             return new ResponseEntity<>(p, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
@@ -59,4 +60,11 @@ public class ProductController {
         String message = productService.deleteProduct(id);
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
+    @GetMapping("/sayHello/{name}")
+    public String sayHello(@PathVariable(name = "name") String name){
+
+        return "Hello " + name + " !! From "  + "-"  ;
+    }
+
 }
+
